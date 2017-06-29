@@ -3,6 +3,7 @@
 /* @var $this yii\web\View */
 
 use yii\helpers\Html;
+use frontend\widgets\WLang;
 
 $this->title = 'About';
 $this->params['breadcrumbs'][] = $this->title;
@@ -14,3 +15,5 @@ $this->params['breadcrumbs'][] = $this->title;
 
     <code><?= __FILE__ ?></code>
 </div>
+
+<?= WLang::widget();?>
