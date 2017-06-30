@@ -2,15 +2,13 @@
 
 use yii\helpers\Html;
 ?>
-
 <div id="lang">
-    <span id="current-lang">
-        <?= $current->name;?> <span class="show-more-lang">▼</span>
-    </span>
-    <ul id="langs">
+    <ul id="langs" class="list-inline">
+        <li class="item-lang active"><img src="/images/<?= $current->url;?>.png">
+        </li>
         <?php foreach ($langs as $lang):?>
             <li class="item-lang">
-                <?= Html::a($lang->name, '/'.$lang->url.Yii::$app->getRequest()->getLangUrl()) ?>
+                <a href="<?='/'.$lang->url.Yii::$app->getRequest()->getLangUrl()?>"><img src="/images/<?=$lang->url?>.png"></a>
             </li>
         <?php endforeach;?>
     </ul>

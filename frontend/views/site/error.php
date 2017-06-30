@@ -9,19 +9,17 @@ use yii\helpers\Html;
 
 $this->title = $name;
 ?>
-<div class="site-error">
-
-    <h1><?= Html::encode($this->title) ?></h1>
-
-    <div class="alert alert-danger">
-        <?= nl2br(Html::encode($message)) ?>
+<!-- 404 -->
+<div class="container">
+    <div class="main">
+        <div class="error-404 text-center">
+            <h1><?= Html::encode($this->title) ?></h1>
+            <p>
+                <?= nl2br(Html::encode($message)) ?>
+            </p>
+            <a class="b-home" href="/"><?=Yii::t('main', 'Back to Home')?></a>
+        </div>
     </div>
-
-    <p>
-        The above error occurred while the Web server was processing your request.
-    </p>
-    <p>
-        Please contact us if you think this is a server error. Thank you.
-    </p>
-
+    <!-- 404 -->
 </div>
+

@@ -55,7 +55,7 @@ return [
                     'basePath' => '@frontend/messages',
                     'sourceLanguage' => 'en',
                     'fileMap' => [
-                        //'main' => 'main.php',
+                        'main' => 'main.php',
                     ],
                 ],
             ],
