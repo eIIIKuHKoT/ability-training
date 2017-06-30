@@ -4,6 +4,7 @@ namespace frontend\assets;
 
 use yii\web\AssetBundle;
 use Yii;
+use yii\web\View;
 
 /**
  * Main frontend application asset bundle.
@@ -24,7 +25,9 @@ class AppAsset extends AssetBundle
         'yii\web\YiiAsset',
         'yii\bootstrap\BootstrapAsset',
     ];
-
+    public $jsOptions = [
+        'position' => View::POS_HEAD,
+    ];
     /**
      * AppAsset constructor.
      */
@@ -39,7 +42,7 @@ class AppAsset extends AssetBundle
             case 'site':
                 switch ($action) {
                     case 'index':
-                        $this->js[] = 'js/libs/responsiveslides.min.js';
+                        $this->js[] = 'js/lib/responsiveslides.min.js';
                         break;
                 }
 
