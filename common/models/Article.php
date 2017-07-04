@@ -50,4 +50,13 @@ class Article extends \yii\db\ActiveRecord
             'date_create' => 'Date Create',
         ];
     }
+
+    /**
+     * @return \yii\db\ActiveQuery
+     */
+    public function getArticleTexts()
+    {
+        return $this->hasMany(ArticleLang::className(), ['id_article' => 'id_article']);
+    }
+
 }

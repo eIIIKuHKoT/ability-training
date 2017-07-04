@@ -1,9 +1,29 @@
 <?php
 /* @var $this yii\web\View */
+use yii\helpers\Html;
+use yii\grid\GridView;
+$this->title = 'Articles';
+$this->params['breadcrumbs'][] = $this->title;
 ?>
-<h1>blog/index</h1>
+<div class="lang-index">
 
-<p>
-    You may change the content of this page by modifying
-    the file <code><?= __FILE__; ?></code>.
-</p>
+    <h1><?= Html::encode($this->title) ?></h1>
+
+    <p>
+        <?= Html::a(Yii::t('app', 'Create Lang'), ['create'], ['class' => 'btn btn-success']) ?>
+    </p>
+    <?= GridView::widget([
+        'dataProvider' => $dataProvider,
+        'columns' => [
+            ['class' => 'yii\grid\SerialColumn'],
+  //          'id_article',
+  //          'url:url',
+            'image',
+            'published',
+            'date_update',
+            'date_create',
+
+            ['class' => 'yii\grid\ActionColumn'],
+        ],
+    ]); ?>
+</div>

@@ -30,18 +30,17 @@
             [
                 'options' => ['class' => 'sidebar-menu'],
                 'items' => [
-                    ['label' => 'Menu Yii2', 'options' => ['class' => 'header']],
-                    ['label' => 'Gii', 'icon' => 'file-code-o', 'url' => ['/gii']],
-                    ['label' => 'Debug', 'icon' => 'dashboard', 'url' => ['/debug']],
+                    ['label' => 'Main Menu', 'options' => ['class' => 'header']],
                     ['label' => 'Login', 'url' => ['site/login'], 'visible' => Yii::$app->user->isGuest],
                     [
-                        'label' => 'Same tools',
+                        'label' => 'Blog',
                         'icon' => 'share',
                         'url' => '#',
                         'items' => [
-                            ['label' => 'Gii', 'icon' => 'file-code-o', 'url' => ['/gii'],],
-                            ['label' => 'Debug', 'icon' => 'dashboard', 'url' => ['/debug'],],
-                            [
+                            ['label' => 'Articles', 'icon' => 'file-code-o', 'url' => ['/blog/articles'],],
+                            ['label' => 'Categories', 'icon' => 'list', 'url' => ['/blog/categories'],],
+                            ['label' => 'Comments', 'icon' => 'commenting', 'url' => ['/comments'],],
+                            /*[
                                 'label' => 'Level One',
                                 'icon' => 'circle-o',
                                 'url' => '#',
@@ -57,7 +56,7 @@
                                         ],
                                     ],
                                 ],
-                            ],
+                            ],*/
                         ],
                     ],
                 ],
