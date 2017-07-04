@@ -2,8 +2,13 @@
 /* @var $this yii\web\View */
 use yii\helpers\Html;
 use yii\grid\GridView;
+use yii\grid\DataColumn;
+use frontend\components\LangUrlManager;
 $this->title = 'Articles';
 $this->params['breadcrumbs'][] = $this->title;
+
+$q = new LangUrlManager();
+var_dump(Yii::$app->urlManager->baseUrl);
 ?>
 <div class="lang-index">
 
@@ -17,8 +22,22 @@ $this->params['breadcrumbs'][] = $this->title;
         'columns' => [
             ['class' => 'yii\grid\SerialColumn'],
   //          'id_article',
-  //          'url:url',
-            'image',
+            [
+                'class' => DataColumn::className(), // Не обязательно
+                'value' => function($data){
+                    return Html::a(
+                        'asd',
+                        Yii::$app->urlManager->baseUrl.'/blog/'.$data->url,
+                        [
+                            'title' => '',
+                            'target' => '_blank'
+                        ]
+                    );
+                },
+                'format' => 'raw',
+                'label' => 'Article Link',
+            ],
+            'image:image:Preview Image',
             'published',
             'date_update',
             'date_create',
