@@ -3,12 +3,14 @@
 use yii\helpers\Html;
 use yii\grid\GridView;
 use yii\grid\DataColumn;
+use yii\grid\CheckboxColumn;
 use frontend\components\LangUrlManager;
+
 $this->title = 'Articles';
 $this->params['breadcrumbs'][] = $this->title;
 
 $q = new LangUrlManager();
-var_dump(Yii::$app->urlManager->baseUrl);
+var_dump(time());
 ?>
 <div class="lang-index">
 
@@ -21,13 +23,13 @@ var_dump(Yii::$app->urlManager->baseUrl);
         'dataProvider' => $dataProvider,
         'columns' => [
             ['class' => 'yii\grid\SerialColumn'],
-  //          'id_article',
+            //          'id_article',
             [
                 'class' => DataColumn::className(), // Не обязательно
-                'value' => function($data){
+                'value' => function ($data) {
                     return Html::a(
                         'asd',
-                        Yii::$app->urlManager->baseUrl.'/blog/'.$data->url,
+                        Yii::$app->urlManager->baseUrl . '/blog/' . $data->url,
                         [
                             'title' => '',
                             'target' => '_blank'
@@ -38,9 +40,28 @@ var_dump(Yii::$app->urlManager->baseUrl);
                 'label' => 'Article Link',
             ],
             'image:image:Preview Image',
-            'published',
-            'date_update',
-            'date_create',
+            [
+                'class' => 'yii\grid\CheckboxColumn',
+                'header' =>  'Published',
+
+                'checkboxOptions' => function ($model, $key, $index, $column) {
+                    return ['value' => $model->published, 'checked' => $model->published,
+                        'disabled' => true
+                    ];
+                }
+            ],
+
+            [
+                'attribute' => 'date_update',
+                'format' => ['date', 'HH:mm:ss dd.MM.Y'],
+                'options' => ['width' => '100']
+            ],
+            [
+                'attribute' => 'date_create',
+                'format' => ['date', 'HH:mm:ss dd.MM.Y'],
+                'options' => ['width' => '100']
+            ],
+
 
             ['class' => 'yii\grid\ActionColumn'],
         ],
