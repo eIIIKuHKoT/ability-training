@@ -41,7 +41,7 @@ return [
         'urlManager' => [
             'enablePrettyUrl' => true,
             'showScriptName' => false,
-            'baseUrl' => 'http://ability-training.local',
+            //'baseUrl' => 'http://ability-training.local',
             'rules' => [
             ],
         ],

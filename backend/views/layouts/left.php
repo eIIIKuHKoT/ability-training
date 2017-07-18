@@ -37,8 +37,8 @@
                         'icon' => 'share',
                         'url' => '#',
                         'items' => [
-                            ['label' => 'Articles', 'icon' => 'file-code-o', 'url' => ['/blog/articles'],],
-                            ['label' => 'Categories', 'icon' => 'list', 'url' => ['/blog/categories'],],
+                            ['label' => 'Articles', 'icon' => 'file-code-o', 'url' => ['/articles'],],
+                            ['label' => 'Categories', 'icon' => 'list', 'url' => ['/categories'],],
                             ['label' => 'Comments', 'icon' => 'commenting', 'url' => ['/comments'],],
                             /*[
                                 'label' => 'Level One',

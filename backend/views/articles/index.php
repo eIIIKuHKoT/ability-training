@@ -9,8 +9,6 @@ use frontend\components\LangUrlManager;
 $this->title = 'Articles';
 $this->params['breadcrumbs'][] = $this->title;
 
-$q = new LangUrlManager();
-var_dump(time());
 ?>
 <div class="lang-index">
 
@@ -28,8 +26,8 @@ var_dump(time());
                 'class' => DataColumn::className(), // Не обязательно
                 'value' => function ($data) {
                     return Html::a(
-                        'asd',
-                        Yii::$app->urlManager->baseUrl . '/blog/' . $data->url,
+                        '',
+                        '#',
                         [
                             'title' => '',
                             'target' => '_blank'
